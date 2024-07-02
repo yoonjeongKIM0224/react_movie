@@ -1,3 +1,5 @@
+https://yoonjeongkim0224.github.io/react_movie/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
