@@ -66,6 +66,7 @@
 
 .section_title * {
   font-family: inherit;
+  line-height: inherit;
 }
 
 [class*="short_"] {
@@ -242,4 +243,61 @@
 
 .btn_1:hover {
   transform: scale(1.08);
+}
+
+@media (max-width: 920px) {
+  .wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .section_title {
+    font-size: 50px;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+  }
+
+  .section_title > .container {
+    flex-direction: column;
+  }
+
+  .movie_list .title {
+    font-size: 20px;
+    height: 56px;
+  }
+
+  .movie_list > .item {
+    width: calc((100% - 20px) / 2);
+    margin-top: 40px;
+  }
+
+  .movie_list > .item:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+
+  .movie_list > .item:not(:nth-child(2n)) {
+    margin-right: 20px;
+  }
+  
+  .movie_list > .item:not(:nth-child(n+4)) {
+    margin-top: 40px;
+  }
+  
+  .movie_list > .item:not(:nth-child(n+3)) {
+    margin-top: 0;
+  }
+
+  .info_list > .item {
+    font-size: 12px;
+    margin-right: 6px;
+  }
+
+  .detail_wrap .container {
+    flex-direction: column;
+  }
+
+  .detail_wrap .img {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
 }
