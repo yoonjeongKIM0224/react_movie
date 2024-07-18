@@ -1,13 +1,30 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function DetailInfo(props) {
-    return <div>
-        <h1>{props.movie.title}</h1>
-        <img src={props.movie.medium_cover_image} />
-        <p>별점: {props.movie.rating}/10</p>
-        <p>개봉: {props.movie.year}</p>
-        <p>설명: {props.movie.description_full}</p>
+    return <div className="detail_wrap">
+        <h2 className="section_title">{props.movie.title}</h2>
+        <div className="container">
+            <img src={props.movie.medium_cover_image} className="img" />
+            <div className="info_wrap">
+                <div className="info_container">
+                    <h3 className="title">Rating</h3>
+                    <p className="text">{props.movie.rating}/10</p>
+                </div>
+                <div className="info_container">
+                    <h3 className="title">Year</h3>
+                    <p className="text">{props.movie.year}/10</p>
+                </div>
+                <div className="info_container">
+                    <h3 className="title">Description</h3>
+                    <p className="text">{props.movie.description_full}/10</p>
+                </div>
+            </div>
+        </div>
+
+        <div className="btn_wrap">
+            <Link to="/react_movie" className="btn_1">View List</Link>
+        </div>
     </div>
 }
 
@@ -32,7 +49,13 @@ function Detail(){
     }, []);
 
     return <div>
-        {loading ? <h1>Loading...</h1> : <DetailInfo movie={movie}></DetailInfo>}
+        {loading ? <div aria-label="Loading" className="loading">
+            <div className="container">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
+        </div> : <DetailInfo movie={movie}></DetailInfo>}
     </div>
 }
 

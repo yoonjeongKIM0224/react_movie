@@ -18,11 +18,28 @@ function Home(){
         getMovies();
     }, []);
 
+    console.log(movies)
+
     return <div>
-        {loading ? <h1>Loading...</h1> : <ol>{movies.map((item) => 
+        <h2 className="section_title">
+            <span className="container">
+                <span>20Twenty</span>
+                <span>movie</span>
+            </span>
+            recommendations
+        </h2>
+        {loading ? 
+        <div aria-label="Loading" className="loading">
+            <div className="container">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
+        </div> : <ol className="movie_list">{movies.map((item, idx) => 
         <Movie 
             key={item.id}
             id={item.id}
+            idx={idx}
             coverImg={item.medium_cover_image}
             title={item.title}
             summary={item.summary}
