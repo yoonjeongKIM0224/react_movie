@@ -13,11 +13,11 @@ function DetailInfo(props) {
                 </div>
                 <div className="info_container">
                     <h3 className="title">Year</h3>
-                    <p className="text">{props.movie.year}/10</p>
+                    <p className="text">{props.movie.year}</p>
                 </div>
                 <div className="info_container">
                     <h3 className="title">Description</h3>
-                    <p className="text">{props.movie.description_full}/10</p>
+                    <p className="text">{props.movie.description_full}</p>
                 </div>
             </div>
         </div>
